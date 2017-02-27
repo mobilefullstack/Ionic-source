@@ -1,0 +1,70 @@
+<ion-view view-titie="The DIALOGUE Scripts">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+	
+	<ion-content has-bouncing="false">
+
+		<div class="ds-header">
+			<div class="ds-header-title" ng-bind-html="CONFIG.ds.title"></div>
+			<div class="ds-header-subtitle" ng-bind-html="CONFIG.ds.subtitle"></div>
+			<div class="ds-header-content" ng-bind-html="CONFIG.ds.content"></div>
+			<div class="ds-header-notice" ng-bind-html="CONFIG.ds.notice"></div>
+		</div>
+
+		<div class="page-green-footer">
+		</div>
+
+		<div class="page-card-section ds-card-section">
+			<div class="row ds-col-row">
+				<div class="col">
+					<div class="ds-blue-col">New Fill</div>
+				</div>
+				<div class="col">
+					<div class="ds-green-col">ReFill</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="ds-card btn-smooth" ng-click="onBGMNF()">
+						<div class="ds-card-inner-title vert-align-48">Blood Glucose Monitoring<br>Talking Points - New Fill</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="ds-card ds-green-card btn-smooth" ng-click="onBGMR()">
+						<div class="ds-card-inner-title vert-align-48">Blood Glucose Monitoring<br>Talking Points - ReFill</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="ds-card btn-smooth" ng-click="onHENF()">
+						<div class="ds-card-inner-title vert-align-48">Healthy Eating<br>Talking Points - New Fill</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="ds-card ds-green-card btn-smooth" ng-click="onHER()">
+						<div class="ds-card-inner-title vert-align-48">Healthy Eating<br>Talking Points - ReFill</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="ds-card btn-smooth" ng-click="onPANF()">
+						<div class="ds-card-inner-title vert-align-48">Physical Activity<br>Talking Points - New Fill</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="ds-card ds-green-card btn-smooth" ng-click="onPAR()">
+						<div class="ds-card-inner-title vert-align-48">Physical Activity<br>Talking Points - ReFill</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

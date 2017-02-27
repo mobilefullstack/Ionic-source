@@ -1,0 +1,104 @@
+<ion-view view-titie="MTC Main">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+
+	<ion-content has-bouncing="false">
+
+		<div class="mtc-header">
+			<div class="mtc-header-title" ng-bind-html="trustAsHtml(CONFIG.mtcMain.title)"></div>
+			<div class="mtc-header-content" ng-bind-html="trustAsHtml(CONFIG.mtcMain.content)"></div>
+		</div>
+
+		<div class="page-green-footer">
+		</div>
+
+ 		<div class="mtc-content-section" style="padding-bottom: 0px;">
+ 			<div ng-bind-html="trustAsHtml(CONFIG.mtcMain.comment)"></div>
+			<!-- <div class="form-button btn-smooth mtcm-btn-quiz" ng-click="onQuiz()">START QUIZ</div> -->
+			<div class="mtcm-caption" style="margin-top: 2.5em;">CONTOUR<sup>®</sup>NEXT Meter Training Video</div>
+ 		</div>
+
+		<div class="row responsive-pr mtcm-row-f" style="margin-top: 1.5em;">
+			<div class="col">
+				<div class="mtcm-caption" style="text-align: center;">CONTOUR<sup>®</sup>NEXT<br> Meter Training Video</div>
+				<div class="mtcm-thumbnail btn-smooth hoz-align mtcm-cnmtv" ng-click="onCNMTV()"></div>
+			</div>
+			<div class="col">
+				<div class="mtcm-caption" style="text-align: center;">CONTOUR<sup>®</sup>NEXT EZ<br> Meter Training Video</div>
+				<div class="mtcm-thumbnail btn-smooth hoz-align mtcm-cnemtv" ng-click="onCNEMTV()"></div>
+			</div>
+		</div>
+
+ 		<div class="mtc-content-section" style="padding-bottom: 0px;">
+	 		<div class="row responsive-pr" style="padding: 0px; margin-top: 1.5em;">
+				<div class="col-75" style="position: relative;">
+					<div class="mtcm-caption vert-align">Importance of Accuracy Training Videos</div>
+				</div>
+				<div class="col-25">
+					<button class="button btn-smooth mtcm-btn-glossary" ng-click="onGlossary()">
+						Glossary
+					</button>
+				</div>
+			</div>
+ 		</div>
+
+		<div class="row responsive-pr mtcm-row">
+			<div class="col">
+				<div class="mtcm-caption" style="text-align: center;">Introduction</div>
+				<div class="mtcm-thumbnail hoz-align mtcm-intro">
+					<div class="mtcm-btn-play btn-smooth center-align" ng-click="onIntro(0)"></div>
+				</div>
+				<div class="mtcm-link hoz-align btn-smooth" ng-click="onIntro(1)"><div style="font-size: 1.05em"><span>Transcript</span><i class="ion-arrow-right-c"></i></div></div>
+			</div>
+			<div class="col">
+				<div class="mtcm-caption" style="text-align: center;">Accuracy</div>
+				<div class="mtcm-thumbnail hoz-align mtcm-accuracy">
+					<div class="mtcm-btn-play btn-smooth center-align" ng-click="onAccuracy(0)"></div>
+				</div>
+				<div class="mtcm-link hoz-align btn-smooth" ng-click="onAccuracy(1)"><div style="font-size: 1.05em"><span>Transcript</span><i class="ion-arrow-right-c"></i></div></div>
+			</div>
+		</div>
+
+		<div class="row responsive-pr mtcm-row">
+			<div class="col">
+				<div class="mtcm-caption" style="text-align: center;">Calibration</div>
+				<div class="mtcm-thumbnail hoz-align mtcm-calibration">
+					<div class="mtcm-btn-play btn-smooth center-align" ng-click="onCalibration(0)"></div>
+				</div>
+				<div class="mtcm-link hoz-align btn-smooth" ng-click="onCalibration(1)"><div style="font-size: 1.05em"><span>Transcript</span><i class="ion-arrow-right-c"></i></div></div>
+			</div>
+			<div class="col">
+				<div class="mtcm-caption" style="text-align: center;">Test Strip Chemistry</div>
+				<div class="mtcm-thumbnail hoz-align mtcm-tsc">
+					<div class="mtcm-btn-play btn-smooth center-align" ng-click="onTSC(0)"></div>
+				</div>
+				<div class="mtcm-link hoz-align btn-smooth" ng-click="onTSC(1)"><div style="font-size: 1.05em"><span>Transcript</span><i class="ion-arrow-right-c"></i></div></div>
+			</div>
+		</div>
+
+		<div class="row responsive-pr mtcm-row">
+			<div class="col">
+				<div class="mtcm-caption" style="text-align: center;">Accuracy: Closing the Gap</div>
+				<div class="mtcm-thumbnail hoz-align mtcm-acg">
+					<div class="mtcm-btn-play btn-smooth center-align" ng-click="onACG(0)"></div>
+				</div>
+				<div class="mtcm-link hoz-align btn-smooth" ng-click="onACG(1)"><div style="font-size: 1.05em"><span>Transcript</span><i class="ion-arrow-right-c"></i></div></div>
+			</div>
+		</div>
+
+<!-- 		<div class="page-green-footer" style="margin-top: 3em;">
+			Select Start Quiz below to proceed
+		</div>
+
+		<div class="row responsive-pr mtcm-row" style="margin-top: 1em !important;">
+			<div class="col">
+				<div class="mtcm-thumbnail btn-smooth hoz-align mtcm-sq" ng-click="onQuiz()"></div>
+			</div>
+		</div> -->
+
+		<div style="height: 4em;"></div>
+
+	</ion-content>
+</ion-view>

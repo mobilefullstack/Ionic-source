@@ -1,0 +1,67 @@
+
+<ion-modal-view ng-controller="InsiderCtrl" class="insider-dlg">
+
+	<ion-header-bar class="bar-positive main-nav-bar dlg-header-bar" no-tap-scroll="true">
+
+		<div class="buttons">
+			<button class="button button-icon button-clear ion-ios-close-outline" menu-toggle ng-click="onClose()">
+			</button>
+			<button class="button icon-left ion-ios-arrow-back button-clear button-dark button-arrow" ng-click="onGoLeft()" ng-disabled="disableNavigation || (insiderSIndex >= insiderIndex)" ng-show="INSIDERS.insiders[insiderIndex].hasNavButtons"></button>
+			<button class="button icon-left ion-ios-arrow-forward button-clear button-dark button-arrow" ng-click="onGoRight()" ng-disabled="disableNavigation || (insiderEIndex <= insiderIndex)" ng-show="INSIDERS.insiders[insiderIndex].hasNavButtons"></button>
+		</div>
+
+		<div class="title">
+			<div class="image-title" ng-click="onTapImgTitle()"></div>
+		</div>
+
+		<div class="buttons">
+			<button class="button icon-left button-clear button-dark button-bookmark" ng-class="getBookmarkCls()" ng-click="onBookmark()"></button>
+			<div class="image-logo"></div>
+		</div>
+
+	</ion-header-bar>
+	<div class="insider-backdrop" ng-show="disableNavigation">
+		<ion-spinner icon="{{getIconClass()}}" class='center-align spinner-positive insider-spinner'></ion-spinner>
+	</div>
+	<ion-content id="id-insider" has-bouncing="false" delegate-handle="id-scl-insider">
+		<!-- <ion-scroll id="id-scroll-insider" locking="false" zooming="true" min-zoom="1" direction="xy" style="{{scrollCSS}}" has-bouncing="false"> -->
+
+			<div class="insider-content" style="{{iContentCSS}}">
+
+				<div class="insider-upper" compile="INSIDERS.insiders[insiderIndex].upperContent" on-swipe-left="onGoRight()" on-swipe-right="onGoLeft()">
+				</div>
+
+				<div class="insider-slide insider-margin-top-huge-ni" ng-class="{'insider-hide': !INSIDERS.insiders[insiderIndex].slideContent}">
+
+					<div class="insider-slide-title" compile="INSIDERS.insiders[insiderIndex].slideContent.title"></div>
+
+					<!-- show-pager -->
+					<ion-slide-box class="insider-slide-box" dynamic-slides="INSIDERS.insiders[insiderIndex].slideContent.slides" delegate-handle="sb-insider" show-pager="{{INSIDERS.insiders[insiderIndex].slideContent.slides.length != 1}}" pager-click="onPager(index)">
+						<ion-slide ng-repeat="slide in INSIDERS.insiders[insiderIndex].slideContent.slides track by $index" ng-style="getSlideStyle($index)">
+							<div compile="slide"></div>
+						</ion-slide>
+					</ion-slide-box>
+				</div>
+
+				<div ng-show="INSIDERS.insiders[insiderIndex].lowerContent" compile="INSIDERS.insiders[insiderIndex].lowerContent" on-swipe-left="onGoRight()" on-swipe-right="onGoLeft()">
+				</div>
+
+			</div>
+			<div class="insider-footer" style="{{iFooterCSS}}" on-swipe-left="onGoRight()" on-swipe-right="onGoLeft()">
+				<div ng-show="INSIDERS.insiders[insiderIndex].hasNavButtons" class="insider-footer-content">
+					<button class="button btn-smooth icon-right ion-arrow-right-c insider-footer-button insider-btn-next" ng-click="onGoRight()" ng-hide="insiderEIndex <= insiderIndex">NEXT PAGE</button>
+					<button class="button btn-smooth icon-left ion-arrow-left-c insider-footer-button insider-btn-prev" ng-click="onGoLeft()" ng-hide="insiderSIndex >= insiderIndex">PREVIOUS PAGE</button>
+				</div>
+
+				<button class="button btn-smooth insider-btn-pdf" ng-click="onGoRight(showAnnotation()?1:2)" ng-show="showAnnotation()?INSIDERS.insiders[insiderIndex].hasScriptButtonsA:INSIDERS.insiders[insiderIndex].hasScriptButtons">
+					<span ng-bind-html="showAnnotation()?INSIDERS.insiders[insiderIndex].scriptSectionA:INSIDERS.insiders[insiderIndex].scriptSection"></span>
+					<br>
+					<span ng-bind-html="showAnnotation()?INSIDERS.insiders[insiderIndex].scriptNameA:INSIDERS.insiders[insiderIndex].scriptName"></span>
+				</button>
+
+				<div ng-show="INSIDERS.insiders[insiderIndex].hasFooter" class="insider-footer-bar"></div>
+			</div>
+		<!-- </ion-scroll> -->
+	</ion-content>
+
+</ion-modal-view>

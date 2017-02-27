@@ -1,0 +1,25 @@
+<ion-view view-titie="Diabetes in Review">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+
+	<ion-content has-bouncing="false">
+
+		<div class="dr-header">
+			<div class="dr-header-title" ng-bind-html="CONFIG.dr.title"></div>
+			<div class="dr-header-content" ng-bind-html="CONFIG.dr.content"></div>
+		</div>
+
+		<div class="page-green-footer">
+		</div>
+
+		<!-- <div class="dr-articles-title" ng-click="onTapArticles()">Articles</div> -->
+		<div class="dr-articles-title">Articles</div>
+		
+		<ul class="dr-ul">
+			<li ng-repeat="article in CONFIG.dr.articles track by $index"><div ng-bind-html="CONFIG.dr.articles[$index]" ng-click="onTapArticle($index)"></div></li>
+		</ul>
+
+	</ion-content>
+</ion-view>

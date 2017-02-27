@@ -1,0 +1,77 @@
+<ion-view view-titie="Home">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+	
+	<ion-content ng-class="isApOpened?'':'blue-back'" has-bouncing="false">
+
+		<div class="home-header">
+			<div class="home-header-img"></div>
+			<div class="home-header-title" ng-bind-html="CONFIG.home.BPEP"></div>
+			<div class="home-header-content" ng-bind-html="CONFIG.home.BPEP_content"></div>
+		</div>
+
+		<div class="page-green-footer">
+			<button class="button button-clear icon-right ion-information-circled btn-smooth home-btn-program" ng-click="onAboutProg()">
+			    ABOUT THE PROGRAM&nbsp
+			</button>
+		</div>
+
+		<div ng-class="'home-ap'" class="display-none" ng-show="isApOpened">
+			<div class="home-ap-disclosure"></div>
+			<div class="home-ap-content" ng-bind-html="CONFIG.home.program_content"></div>
+		</div>
+
+		<div ng-class="'page-card-section'" ng-hide="isApOpened">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="home-card btn-smooth" nav-clear ng-click="onDCP()">
+						<div class="home-card-header">
+							<div class="home-card-header-inner vert-align-56">Dialogue - Diabetes Consult for Pharmacy</div>
+						</div>
+						<div class="home-card-content">Diabetes information and helpful management tools to enhance patient-pharmacist interaction.</div>
+						<div class="home-card-footer">
+							<div class="home-card-footer-inner vert-align">LEARN MORE&nbsp&nbsp<i class="ion-arrow-right-c"></i></div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="home-card btn-smooth" ng-click="onMTC()">
+						<div class="home-card-header">
+							<div class="home-card-header-inner vert-align-56">Meter Training</div>
+						</div>
+						<div class="home-card-content">Meter demonstration videos and interactive <span style="font-style: italic;">Importance of Accuracy</span> training session.</div>
+						<div class="home-card-footer">
+							<div class="home-card-footer-inner vert-align">LEARN MORE&nbsp&nbsp<i class="ion-arrow-right-c"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="home-card btn-smooth" ng-click="onDR()">
+						<div class="home-card-header">
+							<div class="home-card-header-inner vert-align-56">Diabetes <span style="font-style: italic;">InReview</span></div>
+						</div>
+						<div class="home-card-content">Help your patients by staying informed on diabetes research from a selection of medical journal publications.</div>
+						<div class="home-card-footer">
+							<div class="home-card-footer-inner vert-align">LEARN MORE&nbsp&nbsp<i class="ion-arrow-right-c"></i></div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="home-card btn-smooth" ng-click="onSC()" style="background-color: white; color: #6DBB0C; padding: 7%;">
+						<div class="vert-align" style="width: 84%;">
+							<div class="home-card-header-inner" style="color: #6DBB0C; padding-left: 0%;">Solution Center</div>
+							<br>Quick links to free CONTOUR<sup>®</sup>NEXT meters, coupons and other money saving offers for your patient.
+							<div class="home-card-footer-inner home-card-footer-sc">LEARN MORE&nbsp&nbsp<i class="ion-arrow-right-c"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</ion-content>
+</ion-view>

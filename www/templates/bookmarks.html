@@ -1,0 +1,37 @@
+<ion-view view-titie="Bookmarks">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+	
+	<ion-content has-bouncing="false">
+
+		<div class="bookmarks-header">
+			<div class="bookmarks-header-title" ng-bind-html="CONFIG.bookmarks.title"></div>
+		</div>
+
+		<div class="page-green-footer">
+		</div>
+
+		<div class="bookmarks-content-section">
+			<!-- <ion-scroll id="id-scroll-bookmarks" direction="y" has-bouncing="false"> -->
+			<div ng-switch on="bookmarks.length == 0">
+				<ion-list delegate-handle="id-lst-bookmarks" ng-switch-when="false">
+					<ion-item class="b-item" ng-repeat="item in bookmarks track by $index" ng-click="onTapItem($event, $index)">
+						<i class="b-star-icon ion-android-star"></i>
+						<div class="b-item-title">{{item.title}}</div>
+						<div class="b-item-subtitle" ng-bind-html="item.subtitle"></div>
+						<div class="b-item-comment" ng-bind-html="item.comment"></div>
+						<div class="b-item-disc" ng-click="onOpenBookmark($event, $index)"></div>
+						<ion-option-button class="button button-assertive icon-left ion-ios-trash" ng-click="onDelete($index)">Delete</ion-option-button>
+					</ion-item>
+				</ion-list>
+				<div class="b-no-bookmarks" ng-switch-when="true">
+					No bookmarks have been added
+				</div>
+			</div>
+			<!-- </ion-scroll> -->
+		</div>
+
+	</ion-content>
+</ion-view>

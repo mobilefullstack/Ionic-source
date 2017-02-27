@@ -1,0 +1,159 @@
+<ion-view view-titie="MTC Register">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+
+	<ion-content has-bouncing="false">
+
+		<div class="mtc-header">
+			<div class="mtc-header-title" ng-bind-html="trustAsHtml(CONFIG.mtcr.title)"></div>
+		</div>
+
+		<div class="page-green-footer-thin">
+		</div>
+
+ 		<div class="mtcr-content-section">
+ 			* Required
+
+			<div class="card form-card" style="margin-top: 6%">
+				<label class="item item-input item-icon-left">
+					<span class="input-label">First Name*</span>
+					<input type="text" ng-model="userData.firstName" autocorrect="off" placeholder="">
+				</label>
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Last Name*</span>
+					<input type="text" ng-model="userData.lastName" autocorrect="off" placeholder="">
+				</label>
+			</div>
+
+			<div class="card form-card" style="margin-top: 6%">
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Professional Type*
+					</div>
+					<select ng-model="userData.profType">
+						<option>RPh</option>
+						<option>PharmD</option>
+						<option>Pharm Tech</option>
+						<option>CDE</option>
+						<option>MD</option>
+						<option>DO</option>
+						<option>RN</option>
+						<option>PA</option>
+						<option>NP</option>
+					</select>
+				</label>
+			</div>
+
+			<div class="card form-card" style="margin-top: 6%">
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Pharmacy Name*</span>
+					<input type="text" ng-model="userData.pharName" placeholder="">
+				</label>
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Store Number&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+					<input type="text" ng-model="userData.storeNumber" placeholder="">
+				</label>
+			</div>
+
+			<div class="card form-card" style="margin-top: 6%">
+				<label class="item item-input item-icon-left" ng-class="{'item-stacked-label': isPhone()}">
+					<span class="input-label input-long-label">Primary Office Address 1*</span>
+					<input type="text" ng-model="userData.POA1" placeholder="">
+				</label>
+				<label class="item item-input item-icon-left" ng-class="{'item-stacked-label': isPhone()}">
+					<span class="input-label input-long-label">Primary Office Address 2*</span>
+					<input type="text" ng-model="userData.POA2" placeholder="">
+				</label>
+				<label class="item item-input item-icon-left">
+					<span class="input-label">City*&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+					<input type="text" ng-model="userData.city" placeholder="">
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label">
+						State*
+					</div>
+					<select ng-model="userData.state">
+						<option ng-repeat="state in CONFIG.states">{{state}}</option>
+					</select>
+				</label>
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Zip code*</span>
+					<input type="text" ng-model="userData.zipCode" placeholder="">
+				</label>
+			</div>
+
+			<div class="card form-card" style="margin-top: 6%">
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Email Address*</span>
+					<input type="email" ng-model="userData.email" placeholder="">
+				</label>
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Confirm Email*</span>
+					<input type="email" ng-model="userData.confirmEmail" placeholder="">
+				</label>
+			</div>
+
+			<div class="card form-card" style="margin-top: 6%">
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Create Password*&nbsp&nbsp</span>
+					<input type="password" ng-model="userData.password" placeholder="">
+				</label>
+				<label class="item item-input item-icon-left">
+					<span class="input-label">Confirm Password*</span>
+					<input type="password" ng-model="userData.confirmPwd" placeholder="">
+				</label>
+			</div>
+
+			<div class="row responsive-pr insider-row" style="margin-top: 6%">
+				<div class="col-60">
+					<div class="card form-card">
+						<label class="item item-input item-select">
+							<div class="input-label">
+								License State
+							</div>
+							<select ng-model="userData.licState">
+								<option>AL</option>
+								<option>AK</option>
+								<option>AZ</option>
+							</select>
+						</label>
+						<label class="item item-input item-icon-left">
+							<span class="input-label">License Number**</span>
+							<input type="text" ng-model="userData.licNumber" placeholder="">
+						</label>
+					</div>
+				</div>
+				<div class="col-5"></div>
+				<div class="col-35">
+					<div class="card form-card mtcr-proftype">
+						<label class="item item-input item-select">
+							<select ng-model="userData.profType">
+								<option>NPI</option>
+								<option>SLN</option>
+								<option>DEA</option>
+							</select>
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-checkbox" style="margin-top: 2%; font-size: .9em;" ng-click="onChkNotification()">
+				<div class="form-checkbox-icon">
+					<i ng-class="sendNotifications?'ion-android-checkbox':'ion-android-checkbox-outline-blank'"></i>
+				</div>
+				<div class="form-checkbox-caption">
+					Please send me notifications regarding updates to the Bayer Pharmacy Education Program.
+				</div>
+			</div>
+
+			<div class="form-button btn-smooth mtcr-btn-submit" ng-click="onSubmit()">SUBMIT</div>
+
+			<div style="margin-top: 7%; font-size: .9em;">
+				<p>** License number is required for validation of free demo meter requests. </p>
+				<p>**Registration may take a few minutes to validate your information.</p>
+			</div>
+ 		</div>
+	</ion-content>
+</ion-view>

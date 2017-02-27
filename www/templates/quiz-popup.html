@@ -1,0 +1,17 @@
+
+<ion-modal-view class="quiz-popup">
+
+	<ion-content scroll="false" style="position: relative;">
+		<div class="qp-content-section">
+			<div class="qp-title" ng-bind-html="isTrueChoice?'Yes, that is correct.':'No, that is incorrect.'"></div>
+			<div class="qp-checkmark">
+				<i ng-class="getPopupIconClass()"></i>
+			</div>
+			<div class="qp-alert-content" ng-bind-html="trustAsHtml(quiz.alert)" ng-show="isTrueChoice"></div>
+			<a class="button button-clear qp-btn-continue" ng-click="onClosePopup()">
+		  		{{getQPButtonCaption()}}
+		  	</a>
+		</div>
+	</ion-content>
+	
+</ion-modal-view>

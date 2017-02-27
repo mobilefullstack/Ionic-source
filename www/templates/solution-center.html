@@ -1,0 +1,43 @@
+<ion-view view-titie="Solution Center">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+	
+	<ion-content has-bouncing="false">
+
+		<div class="sc-header">
+			<div class="sc-header-title" ng-bind-html="CONFIG.sc.title"></div>
+			<div class="sc-header-content" ng-bind-html="CONFIG.sc.content"></div>
+		</div>
+
+		<div class="page-green-footer">
+		</div>
+
+		<div class="page-card-section">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="sc-card btn-smooth" ng-click="onFCNMC()">
+						<div class="sc-card-inner-title vert-align-48">Free CONTOUR<sup>®</sup>NEXT portfolio meters for your patients</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="sc-card btn-smooth" ng-click="onCPMFY()">
+						<div class="sc-card-inner-title vert-align-48">Co-Pay mitigation for your patient - CONTOUR<sup>®</sup> Choice Program</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col-50">
+					<div class="sc-card btn-smooth" ng-click="onPAI()">
+						<div class="sc-card-inner-title vert-align-48">Product Coverage Information</div>
+					</div>
+				</div>
+				<div class="col-50">
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

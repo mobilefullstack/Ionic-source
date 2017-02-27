@@ -1,0 +1,11 @@
+
+<ion-modal-view class="transcript-popup">
+
+	<ion-content scroll="false">
+		<div class="button icon-left button-clear ion-close-circled tp-close-button" ng-click="onClosePopup()"></div>
+		<ion-scroll id="id-scroll-tp-content" direction="y" has-bouncing="false">
+			<div class="tp-content" ng-bind-html="trustAsHtml(CONFIG.mtcMain.transcript[scriptIndex])"></div>
+		</ion-scroll>
+	</ion-content>
+	
+</ion-modal-view>

@@ -1,0 +1,41 @@
+
+<ion-modal-view class="survey-popup" ng-controller="SurveyCtrl">
+
+	<div ng-switch on="isPharSelected">
+
+		<div class="sp-content" ng-switch-when="false">
+			<div class="sp-header">
+				<div class="vert-align" style="width: 100%;">
+					<div class="sp-title">Which Pharmacy do you work for?</div>
+					<div class="sp-comment">Please select below, you will only have to complete this one time.</div>
+				</div>
+			</div>
+			<ion-scroll id="id-scroll-sp">
+				<div class="sp-phar-item button-smooth" ng-class="{'sp-phar-item-selected': curPharIndex == $index}" ng-repeat="phar in CONFIG.pharmacies" ng-click="onTapPharItem($index)">
+					{{phar}}
+					<i class="ion-checkmark"></i>
+				</div>
+			</ion-scroll>
+		</div>
+
+		<div class="sp-content" ng-switch-when="true">
+			<div class="sp-confirm-title">Thank you for your participation!</div>
+			<div class="sp-confirm">
+				<div class="vert-align" style="width: 100%;">
+					<div class="sp-confirm-comment">You have chosen:</div>
+					<div class="sp-confirm-selection">{{CONFIG.pharmacies[curPharIndex]}}</div>
+				</div>
+			</div>
+			<div class="sp-footer row">
+				<div class="col">
+					<div class="sp-button sp-button-transparent btn-smooth" ng-click="onBack()"><i class="ion-arrow-left-c"></i>&nbsp&nbspGO BACK</div>
+				</div>
+				<div class="col">
+					<div class="sp-button btn-smooth" ng-click="onSubmit()">SUBMIT</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</ion-modal-view>

@@ -1,0 +1,43 @@
+<ion-view view-titie="Meter Training & Certification">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+
+	<ion-content has-bouncing="false">
+
+		<div class="mtc-header">
+			<div class="mtc-header-title" ng-bind-html="trustAsHtml(CONFIG.mtc.title)"></div>
+			<div class="mtc-header-content" ng-bind-html="trustAsHtml(CONFIG.mtc.content)"></div>
+		</div>
+
+		<div class="page-green-footer-thin">
+		</div>
+
+ 		<div class="mtc-content-section">
+ 			<div ng-bind-html="trustAsHtml(CONFIG.mtc.comment)"></div>
+ 			<div class="mtc-form-section">
+ 				Please Log in:
+				<div class="card form-card" style="margin-top: 3%">
+					<label class="item item-input item-icon-left">
+						<span class="input-label">Username</span>
+						<input type="text" ng-model="userCred.username" autocorrect="off" autocapitalize="none" placeholder="">
+					</label>
+					<label class="item item-input item-icon-left">
+						<span class="input-label">Password</span>
+						<input type="password" ng-model="userCred.pwd" placeholder="">
+					</label>
+				</div>
+				<div style="margin-top: 1.3em; height: 2.6em;">
+					<div class="form-link btn-smooth" style="width: 11em; float: left; padding-top: .6em;" ng-click="onForgotPwd()">Forgot your password?</div>
+					<div class="form-button btn-smooth mtc-btn-send" ng-click="onSend()">SEND</div>
+				</div>
+				<div style="margin-top: 1em;">
+					Not a member?&nbsp
+					<div class="form-link btn-smooth" ng-click="onRegister()">Register now&nbsp<i class="ion-arrow-right-c"></i></div>
+				</div>
+			</div>
+ 			<div class="sc-note-section" ng-bind-html="trustAsHtml(CONFIG.mtc.note)"></div>
+ 		</div>
+	</ion-content>
+</ion-view>

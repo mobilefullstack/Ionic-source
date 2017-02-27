@@ -1,0 +1,98 @@
+
+<ion-side-menus enable-menu-with-back-views="true">
+
+  <ion-side-menu-content>
+
+    <ion-nav-bar class="bar-positive main-nav-bar" no-tap-scroll="true">
+
+      <ion-nav-buttons side="left">
+
+        <button class="button button-icon button-clear ion-navicon" menu-toggle ng-click="openDrawer()">
+        </button>
+        <button class="button icon-left ion-ios-arrow-back button-clear button-dark button-arrow" ng-click="$ionicGoBack()" ng-show="!isRootState()"></button>
+
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <button class="button icon-left button-clear button-dark button-bookmark" ng-class="getBookmarkCls()" ng-click="onBookmark()" ng-show="isBookmarkable()"></button>
+        <div class="image-logo"></div>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <drawer side="left">
+
+    <ion-header-bar class="bar-positive main-nav-bar" id="id-side-header-bar" no-tap-scroll="true">
+        <button class="button button-icon button-clear ion-navicon" style="position: absolute; right: .5em;" menu-toggle ng-click="closeDrawer()">
+        </button>
+
+    </ion-header-bar>
+
+    <ion-content style="background-color: #182e92;" delegate-handle="id-scl-main-menu">
+      <ion-list class="mainmenu">
+        <ion-item menu-close drawer-close class="menu-item-parent" ng-click="onTapBookmarks()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[0].title"></div>
+        </ion-item>
+
+        <ion-item class="menu-item-parent" ng-click="onExpand(1)">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[1].title"></div>
+            <i class="menu-arrow" ng-class="getChevronCls(1)" style="text-align: right;"></i>
+        </ion-item>
+        <ion-item class="menu-item-child" ng-show="menuItems[1].expanded" ng-click="onTapDS()" menu-close drawer-close>
+            <div class="menu-item-child-title" ng-bind-html="menuItems[1].items[0].title"></div>
+        </ion-item>
+        <ion-item class="menu-item-child" ng-show="menuItems[1].expanded" ng-click="onTapPM()" menu-close drawer-close>
+            <div class="menu-item-child-title" ng-bind-html="menuItems[1].items[1].title"></div>
+        </ion-item>
+        <ion-item class="menu-item-child" ng-show="menuItems[1].expanded" ng-click="onTapPAI()" menu-close drawer-close>
+            <div class="menu-item-child-title" ng-bind-html="menuItems[1].items[2].title"></div>
+        </ion-item>
+
+        <ion-item menu-close drawer-close class="menu-item-parent menu-item-sc" ng-click="onTapSC()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[2].title"></div>
+        </ion-item>
+
+        <ion-item menu-close drawer-close class="menu-item-parent" ng-click="onTapHome()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[3].title" style="padding-top: 2em;"></div>
+        </ion-item>
+
+        <ion-item menu-close drawer-close class="menu-item-parent" ng-click="onTapDCP()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[4].title"></div>
+        </ion-item>
+        <ion-item class="menu-item-child" ng-repeat="item in menuItems[4].items track by $index" ng-click="onTapDCPTab($index)" menu-close drawer-close>
+            <div class="menu-item-child-title" ng-bind-html="item.title"></div>
+        </ion-item>
+
+        <ion-item menu-close drawer-close class="menu-item-parent" ng-click="onTapMTCMain()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[5].title"></div>
+        </ion-item>
+
+        <ion-item menu-close drawer-close class="menu-item-parent" ng-click="onTapDR()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[6].title"></div>
+        </ion-item>
+
+        <ion-item menu-close drawer-close class="menu-item-parent" ng-click="onTapContact()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[7].title" style="padding-top: 2em;"></div>
+        </ion-item>
+
+        <ion-item menu-close drawer-close class="menu-item-parent" ng-click="onTapUpdate()">
+            <div class="menu-item-parent-title" ng-bind-html="menuItems[8].title"></div>
+        </ion-item>
+
+        <div class="menu-copyright">
+            ©2016 Bayer. All rights reserved. Bayer (reg’d), the Bayer Cross (reg’d), and CONTOUR<sup>®</sup> are trademarks of Bayer.<br>
+            Brought to you by Ascensia Diabetes Care.
+        </div>
+        <div class="menu-logo"></div>
+      </ion-list>
+    </ion-content>
+    
+  </drawer>
+
+  <div id="menu-drop-shadow" ng-click="closeDrawer()"></div>
+
+</ion-side-menus>

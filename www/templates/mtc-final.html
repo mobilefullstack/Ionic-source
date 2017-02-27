@@ -1,0 +1,90 @@
+<ion-view view-titie="MTC Final">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+
+	<ion-content has-bouncing="false" delegate-handle="id-scl-final">
+
+ 		<div>
+
+ 			<div ng-switch on="finalPhase">
+
+ 			<div ng-switch-when="1">
+	 			<div class="mtcf-banner-title">Congratulations!</div>
+	 			<div class="mtcf-main-section">
+		 			<div class="mtcf-header-title">You have completed the Bayer Meter Training & Certificate module.</div>
+		 			<div class="mtcf-subheader-title">Your certificate has been emailed to you.</div>
+	 				<div class="mtcf-comment">You now qualify for a <span style="font-weight: bold">FREE Demo Meter</span> for your pharmacy to help educate your patients on the <span style="-webkit-text-stroke: .2px">CONTOUR<sup>®</sup>NEXT</span> portfolio of meters!</div>
+
+					<div class="form-button btn-smooth mtcf-btn-claim" ng-click="onClaim()">CLAIM YOUR FREE DEMO METER NOW!&nbsp&nbsp<i class="ion-arrow-right-c"></i></div>
+ 				</div>
+			</div>
+
+ 			<div ng-switch-when="2">
+	 			<div class="mtc-header">
+					<div class="mtc-header-title" ng-bind-html="trustAsHtml(CONFIG.mtcr.title)"></div>
+				</div>
+
+				<div class="page-green-footer-thin">
+				</div>
+
+		 		<div class="mtcr-content-section">
+		 			* Required
+
+					<div class="card form-card" style="margin-top: 6%">
+						<label class="item item-input item-icon-left" ng-class="{'item-stacked-label': isPhone()}">
+							<span class="input-label">Shipping Address 1*</span>
+							<input type="text" ng-model="claimData.shipAddr1" autocorrect="off" placeholder="">
+						</label>
+						<label class="item item-input item-icon-left" ng-class="{'item-stacked-label': isPhone()}">
+							<span class="input-label">Shipping Address 2*</span>
+							<input type="text" ng-model="claimData.shipAddr2" autocorrect="off" placeholder="">
+						</label>
+						<label class="item item-input item-icon-left">
+							<span class="input-label">City*&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+							<input type="text" ng-model="claimData.city" autocorrect="off" placeholder="">
+						</label>
+						<label class="item item-input item-select">
+							<div class="input-label">
+								State*
+							</div>
+							<select ng-model="claimData.state">
+								<option ng-repeat="state in CONFIG.states">{{state}}</option>
+							</select>
+						</label>
+						<label class="item item-input item-icon-left">
+							<span class="input-label">Zip code*</span>
+							<input type="text" ng-model="claimData.zipCode" autocorrect="off" placeholder="">
+						</label>
+					</div>
+
+					<br>
+					<br>
+					<span style="-webkit-text-stroke: .2px; line-height: 2em;">Select One*</span>
+					<div ng-repeat="choice in choices track by $index" class="form-checkbox mtcf-choice-item" ng-click="onTapChoice($index)">
+						<div class="form-checkbox-icon">
+							<i ng-class="(curChoiceIndex == $index)?'ion-android-radio-button-on':'ion-android-radio-button-off'"></i>
+						</div>
+						<div class="form-checkbox-caption" ng-bind-html="trustAsHtml(choice.caption)">
+						</div>
+					</div>
+
+					<div class="form-button btn-smooth mtcf-btn-submit" ng-click="onSubmit()">SUBMIT</div>
+		 		</div>
+			</div>
+
+ 			<div ng-switch-when="3">
+	 			<div class="mtcf-main-section">
+		 			<div class="mtcf-thank-you">Thank you</div>
+		 			<div class="mtcf-thank-you-comment">You have completed Free Demo Meter request successfully</div>
+
+					<div class="form-button btn-smooth mtcf-btn-submit" style="margin-top: 10%" ng-click="onClose()">CLOSE</div>
+ 				</div>
+			</div>
+
+			</div>
+ 		</div>
+
+	</ion-content>
+</ion-view>

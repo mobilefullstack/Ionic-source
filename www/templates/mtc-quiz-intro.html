@@ -1,0 +1,22 @@
+<ion-view view-titie="MTC Main">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+
+	<ion-content has-bouncing="false">
+
+		<div class="mtc-header">
+			<div class="mtc-header-title" ng-bind-html="trustAsHtml(CONFIG.mtcQuizIntro.title)"></div>
+			<div class="mtc-header-content" ng-bind-html="trustAsHtml(CONFIG.mtcQuizIntro.content)"></div>
+		</div>
+
+		<div class="page-green-footer-thin">
+		</div>
+
+ 		<div class="mtc-content-section">
+ 			<div ng-bind-html="trustAsHtml(CONFIG.mtcQuizIntro.comment)"></div>
+			<div class="form-button btn-smooth mtcm-btn-quiz" ng-click="onQuiz()">START QUIZ</div>
+ 		</div>
+	</ion-content>
+</ion-view>

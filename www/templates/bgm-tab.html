@@ -1,0 +1,107 @@
+<ion-view view-titie="BGM-tab">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+	
+	<ion-content class="blue-back" has-bouncing="false">
+
+		<div class="dcp-bgm-tab-header">
+			<div class="dcp-tab-header-img dcp-tab-img01 dcp-tab-img-active"></div>
+			<div class="dcp-bgm-tab-header-title" ng-bind-html="CONFIG.dcpTab[0].tabTitle"></div>
+			<div class="dcp-bgm-tab-header-content" ng-bind-html="CONFIG.dcpSubTab[tabIndex]"></div>
+		</div>
+
+		<div class="row tab-row">
+			<div class="col" ng-click="onTP()" ng-class="{'tab\-col\-active': tabIndex == 0}">
+				<div class="tab-col-inner-caption vert-align">The DIALOGUE Talking Points</div>
+			</div>
+			<div class="col" ng-click="onBI()" ng-class="{'tab\-col\-active': tabIndex == 1}">
+				<div class="tab-col-inner-caption vert-align">Background Information</div>
+			</div>
+			<div class="col" ng-click="onPEM()" ng-class="{'tab\-col\-active': tabIndex == 2}">
+				<div class="tab-col-inner-caption vert-align">Patient Education Materials</div>
+			</div>
+			<div class="col" ng-click="onSC()">
+				<div class="tab-col-inner-caption vert-align">Solution Center</div>
+			</div>
+		</div>
+
+		<div ng-switch on="tabIndex">
+
+		<!-- The DIALOGUE Talking Points -->
+		<div ng-class="'tab-card-section'" class="display-none" ng-switch-when="0">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onTPNF()">
+						<div class="vert-align-48">
+							<div class="dcp-bgm-tab-card-inner-title">Talking Points - New Fill</div>
+							<div class="dcp-tab-card-inner-content">Conversation script for patients visiting for the first time.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onTPR()">
+						<div class="vert-align-48">
+							<div class="dcp-bgm-tab-card-inner-title">Talking Points – Refill</div>
+							<div class="dcp-tab-card-inner-content">Conversation script for patients refilling a prescription.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Background Information -->
+		<div ng-class="'tab-card-section'" class="display-none" ng-switch-when="1">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBIO()">
+						<div class="dcp-bgm-tab-bi-title dcp-tab-card-inner-title vert-align">Overview</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBIIM()">
+						<div class="dcp-bgm-tab-bi-title dcp-tab-card-inner-title vert-align">Importance of Monitoring</div>
+					</div>
+				</div>
+			</div>
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBICGT()">
+						<div class="dcp-bgm-tab-bi-title dcp-tab-card-inner-title vert-align">Current Guidelines & Timing</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBIBGPG()">
+						<div class="dcp-bgm-tab-bi-title dcp-tab-card-inner-title vert-align">Blood Glucose Patient Goals</div>
+					</div>
+				</div>
+			</div>
+			<div class="row responsive-pr page-row">
+				<div class="col-50">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBIPT()">
+						<div class="dcp-bgm-tab-bi-title dcp-tab-card-inner-title vert-align">Paired Testing</div>
+					</div>
+				</div>
+				<div class="col-50">
+				</div>
+			</div>
+		</div>
+
+		<!-- Patient Education Materials -->
+		<div ng-class="'tab-card-section'" class="display-none" ng-switch-when="2">
+			<div class="row responsive-pr page-row">
+				<div class="col-50">
+					<div class="dcp-tab-card btn-smooth" ng-click="onPEMKYN()">
+						<div class="dcp-bgm-tab-pem-title dcp-tab-card-inner-title vert-align">Know Your<sup class="sup-tm">TM</sup> Numbers</div>
+					</div>
+				</div>
+				<div class="col-50">
+				</div>
+			</div>
+		</div>
+
+		</div>
+
+	</ion-content>
+</ion-view>

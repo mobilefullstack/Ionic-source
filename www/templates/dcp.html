@@ -1,0 +1,52 @@
+
+
+<ion-view view-titie="DCP" has-bouncing="false">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+	
+	<ion-content class="blue-back" has-bouncing="false">
+
+		<div class="dcp-header">
+			<div class="dcp-header-img"></div>
+			<div class="dcp-header-title" ng-bind-html="CONFIG.dcp.DCP"></div>
+			<div class="dcp-header-content" ng-bind-html="CONFIG.dcp.DCP_content"></div>
+		</div>
+
+		<div class="page-green-footer">
+		</div>
+
+		<div class="page-card-section">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-card btn-smooth" ng-click="onBGM()">
+						<div class="dcp-card-inner-title vert-align-48">Blood Glucose Monitoring</div>
+						<div class="dcp-card-inner-img dcp-bgm"></div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-card btn-smooth" ng-click="onHE()">
+						<div class="dcp-card-inner-title vert-align-48">Healthy Eating</div>
+						<div class="dcp-card-inner-img dcp-he"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-card btn-smooth" ng-click="onPA()">
+						<div class="dcp-card-inner-title vert-align-48">Physical Activity</div>
+						<div class="dcp-card-inner-img dcp-pa"></div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-card btn-smooth" ng-click="onBB()">
+						<div class="dcp-card-inner-title vert-align-48">Background Basics</div>
+						<div class="dcp-card-inner-img dcp-bb"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

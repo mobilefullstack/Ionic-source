@@ -1,0 +1,58 @@
+<ion-view view-titie="MTC Quiz">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+
+	<ion-content has-bouncing="false" delegate-handle="id-scl-quiz">
+
+ 		<div class="mtc-content-section">
+
+ 			<div ng-switch on="quizEnded">
+
+ 			<div ng-switch-when="false">
+	 			<div class="mtcq-header-title">Final Assessment</div>
+	 			<div class="mtcq-question-number">Question {{qNo+1}} of {{qCount}}.</div>
+
+	 			<div class="mtcq-quiz-section">
+	 				<span ng-bind-html="trustAsHtml(quiz.quiz)"></span>
+	 				<br>
+	 				<br>
+					<div ng-repeat="choice in choices track by $index" class="form-checkbox mtcq-choice-item" ng-click="onTapChoice($index)">
+						<div class="form-checkbox-icon">
+							<i ng-class="getChoiceClass($index)"></i>
+						</div>
+						<div class="form-checkbox-caption" ng-bind-html="trustAsHtml(choice.text)">
+						</div>
+					</div>
+	 			</div>
+
+				<div class="form-button btn-smooth mtcq-btn-submit" ng-click="onSubmit()" ng-disabled="!isDirty">SUBMIT</div>
+			</div>
+
+ 			<div ng-switch-when="true">
+	 			<div class="mtcq-final-header-title" ng-hide="getRate() < 80">Congratulations!</div>
+	 			<div class="mtcq-final-subheader-title" ng-class="{'mtcq-big-padding': getRate() < 80}">{{getFinalSubMsg()}}</div>
+				<div class="mtcq-checkmark">
+					<i ng-class="getIconClass()"></i>
+				</div>
+	 			<div class="mtcq-final-result-section">
+	 				<div style="font-weight: bold;">Quiz Result</div>
+	 				<div>Your Score: {{getRate()}}% (<ng-pluralize count="getRate()"
+									when="{'0': 'No points',
+										'one': '1 point',
+										'other': '{} points'}">
+						</ng-pluralize>)</div>
+	 				<div>Passing Score: 80% (80 points)</div>
+	 				<br>
+	 				<div compile="getFinalComment1()"></div>
+	 				<br>
+	 				<div compile="getFinalComment2()"></div>
+	 			</div>
+			</div>
+
+			</div>
+ 		</div>
+
+	</ion-content>
+</ion-view>

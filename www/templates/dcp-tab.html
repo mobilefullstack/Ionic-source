@@ -1,0 +1,167 @@
+<ion-view view-titie="DCP-tab">
+
+	<ion-nav-title>
+		<div class="image-title" ng-click="onTapImgTitle()"></div>
+	</ion-nav-title>
+	
+	<ion-content class="blue-back" has-bouncing="false">
+
+		<div class="dcp-tab-header">
+			<div class="dcp-tab-header-img dcp-tab-img01" ng-class="{'dcp-tab-img-active': tabIndex == 0}"></div>
+			<div class="dcp-tab-header-img dcp-tab-img02" ng-class="{'dcp-tab-img-active': tabIndex == 1}"></div>
+			<div class="dcp-tab-header-img dcp-tab-img03" ng-class="{'dcp-tab-img-active': tabIndex == 2}"></div>
+			<div class="dcp-tab-header-img dcp-tab-img04" ng-class="{'dcp-tab-img-active': tabIndex == 3}"></div>
+			<div class="dcp-tab-header-title" ng-bind-html="CONFIG.dcpTab[tabIndex].tabTitle"></div>
+			<div class="dcp-tab-header-content" ng-bind-html="CONFIG.dcpTab[tabIndex].tabContent"></div>
+		</div>
+
+		<div class="row tab-row">
+			<div class="col" ng-click="onBGM()" ng-class="{'tab\-col\-active': tabIndex == 0}">
+				<div class="tab-col-inner-caption vert-align">Blood Glucose Monitoring</div>
+			</div>
+			<div class="col" ng-click="onDHE()" ng-class="{'tab\-col\-active': tabIndex == 1}">
+				<div class="tab-col-inner-caption vert-align">Healthy Eating</div>
+			</div>
+			<div class="col" ng-click="onPA()" ng-class="{'tab\-col\-active': tabIndex == 2}">
+				<div class="tab-col-inner-caption vert-align">Physical Activity</div>
+			</div>
+			<div class="col" ng-click="onDBB()" ng-class="{'tab\-col\-active': tabIndex == 3}">
+				<div class="tab-col-inner-caption vert-align">Diabetes Background Information</div>
+			</div>
+		</div>
+
+		<div ng-switch on="tabIndex">
+
+		<!-- Blood Glucose Monitoring -->
+		<div ng-class="'tab-card-section'" class="display-none" ng-switch-when="0">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBGMTP()">
+						<div class="dcp-tab-card-inner-title">The DIALOGUE Blood Glucose Monitoring Talking Points</div>
+						<div class="dcp-tab-card-inner-content">Talking points to help educate patients about blood glucose monitoring and diabetes, broken into approximately 2-minute consultations.</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBGMBI()">
+						<div class="dcp-tab-card-inner-title">Blood Glucose Monitoring Background Information</div>
+						<div class="dcp-tab-card-inner-content">Detailed information on the importance of blood glucose monitoring to assist you in helping patients manage their diabetes.</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onBGMPEM()">
+						<div class="dcp-tab-card-inner-title">Patient Education Materials</div>
+						<div class="dcp-tab-card-inner-content">Various topic-related consumer information pieces that you can share with patients.</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" style="background-color: white;" ng-click="onSC()">
+						<div class="dcp-tab-card-inner-title" style="color: #188ED0;">Solution Center</div>
+						<div class="dcp-tab-card-inner-content" style="color: #188ED0;">Quick links to free CONTOUR<sup>®</sup>NEXT meters, coupons and other money saving offers for your patient.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Healthy Eating -->
+		<div ng-class="'tab-card-section'" class="display-none" ng-switch-when="1">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onHETP()">
+						<div class="dcp-tab-card-inner-title">The DIALOGUE Healthy Eating Talking Points</div>
+						<div class="dcp-tab-card-inner-content">Talking points to help educate patients about healthy eating and diabetes, broken into approximately 2-minute consultations.</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onHEBI()">
+						<div class="dcp-tab-card-inner-title">Healthy Eating Background Information</div>
+						<div class="dcp-tab-card-inner-content">Detailed information on the importance of healthy eating to assist you in helping patients manage their diabetes.</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onHEPEM()">
+						<div class="dcp-tab-card-inner-title">Patient Education Materials</div>
+						<div class="dcp-tab-card-inner-content">Various topic-related consumer information pieces that you can share with patients.</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" style="background-color: white;" ng-click="onSC()">
+						<div class="dcp-tab-card-inner-title" style="color: #188ED0;">Solution Center</div>
+						<div class="dcp-tab-card-inner-content" style="color: #188ED0;">Quick links to free CONTOUR<sup>®</sup>NEXT meters, coupons and other money saving offers for your patient.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Physical Activity -->
+		<div ng-class="'tab-card-section'" class="display-none" ng-switch-when="2">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onPATP()">
+						<div class="dcp-tab-card-inner-title">The DIALOGUE Physical Activity Talking Points</div>
+						<div class="dcp-tab-card-inner-content">Talking points to help educate patients about physical activity and diabetes, broken into approximately 2-minute consultations.</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onPABI()">
+						<div class="dcp-tab-card-inner-title">Physical Activity Background Information</div>
+						<div class="dcp-tab-card-inner-content">Detailed information on the importance of physical activity to assist you in helping patients manage their diabetes.</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onPAPEM()">
+						<div class="dcp-tab-card-inner-title">Patient Education Materials</div>
+						<div class="dcp-tab-card-inner-content">Various topic-related consumer information pieces that you can share with patients.</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" style="background-color: white;" ng-click="onSC()">
+						<div class="dcp-tab-card-inner-title" style="color: #188ED0;">Solution Center</div>
+						<div class="dcp-tab-card-inner-content" style="color: #188ED0;">Quick links to free CONTOUR<sup>®</sup>NEXT meters, coupons and other money saving offers for your patient.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Diabetes Background Information -->
+		<div ng-class="'tab-card-section'" class="display-none" ng-switch-when="3">
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onDBIWD()">
+						<div class="dcp-tab-dbi-title dcp-tab-card-inner-title vert-align">What is Diabetes?</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onDBITDM()">
+						<div class="dcp-tab-dbi-title dcp-tab-card-inner-title vert-align">Types of Diabetes Mellitus (DM)</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row responsive-pr page-row">
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" ng-click="onDBINDS()">
+						<div class="dcp-tab-dbi-title dcp-tab-card-inner-title vert-align">National Diabetes Statistics</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="dcp-tab-card btn-smooth" style="background-color: white;" ng-click="onSC()">
+						<div class="dcp-tab-card-inner-title" style="color: #188ED0;">Solution Center</div>
+						<div class="dcp-tab-card-inner-content" style="color: #188ED0;">Quick links to free CONTOUR<sup>®</sup>NEXT meters, coupons and other money saving offers for your patient.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+
+	</ion-content>
+</ion-view>
